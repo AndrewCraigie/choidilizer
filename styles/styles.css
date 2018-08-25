@@ -1,0 +1,26 @@
+body {
+  font-family: Verdana, sans-serif;
+  background-color: darkgray;
+}
+
+section {
+  position: relative;
+  width: 80%;
+  min-height: 95vh;
+  background-color: white;
+  border: 1px solid #444;
+}
+
+#form-div {
+  width: 30%;
+  min-height: 400px;
+  background-color: lightblue;
+  float: left;
+}
+
+#list-div {
+  width: 70%;
+  min-height: 600px;
+  background-color: pink;
+  float: right;
+}
