@@ -2,14 +2,22 @@
 let renderer;
 let settings;
 
+const clearGallery = function(){
+
+    const gallery = document.getElementById('gallery');
+    while (gallery.firstChild) {
+        gallery.removeChild(gallery.firstChild);
+    }
+
+};
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const mainDrawing = document.getElementById('drawing');
-    const drawWidth = mainDrawing.clientWidth - 40;
-    const drawHeight = mainDrawing.clientHeight - 80;
+    const drawWidth = 600;
+    const drawHeight = 600;
 
-    renderer = new Renderer(mainDrawing, drawWidth, drawHeight, drawWidth);
+    renderer = new Renderer(mainDrawing, drawWidth, drawHeight, drawWidth, false);
     renderer.init();
 
     const gallery = document.getElementById('gallery');
@@ -90,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             value: '5',
             class: 'num-control'
         }],
-        ['animate', 'change', '', {
+        ['animate', 'change', 'Animate', {
             id: 'animate',
             type: 'checkbox',
             checked: 'checked',
@@ -103,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form');
     settings.initControls(form, controls, settings);
 
-    //form.addEventListener('submit', settings.drawCurve);
-
+    const clearGalleryBtn = document.getElementById('clear-gallery');
+    clearGalleryBtn.addEventListener('click', clearGallery);
 
 
 

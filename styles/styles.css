@@ -5,26 +5,98 @@ body {
 
 section {
   position: relative;
-  width: 80%;
+  width: 1000px;
+  margin-right: auto;
+  margin-left:auto;
   min-height: 95vh;
   background-color: white;
   border: 1px solid #444;
+  padding-top:20px;
+}
+
+h1 {
+  width: 100%;
+  height: 30px;
+  display:block;
+  line-height: 30px;
+  text-align: center;
+  margin:0;
+  margin-bottom: 10px;
+}
+
+#drawing-wrapper {
+  width: 630px;
+  height: 680px;
+  float:left;
+  background-color: lightgray;
+
 }
 
 #drawing {
-  width: 650px;
-  height: 670px;
+  width: 620px;
+  height: 660px;
   background-color: lightgray;
-  float: right;
+  margin-right:auto;
+  margin-left:auto;
 }
 
 .svg-wrapper {
   position: relative;
-  margin:0;
+  width: 600px;
+  height: 600px;
+  margin: 10px auto 0;
 }
 
+#gallery-wrapper {
+  position:relative;
+  width: 170px;
+  min-height: 85vh;
+  float:right;
+
+}
+
+#gallery {
+  width: 170px;
+  height: 600px;
+
+}
+
+#gallery .svg-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+  margin-left:auto;
+  margin-right:auto;
+  width: 150px;
+  height: 150px;
+}
+
+.gallery-div {
+  width: 150px;
+  height: 150px;
+}
+
+#gallery .gallery-div {
+  position: relative;
+  margin-bottom: 5px;
+  margin-left:auto;
+  margin-right:auto;
+  width: 150px;
+  height: 150px;
+}
+
+.gallery-div .svg-drawing {
+  position: relative;
+  margin-bottom: 5px;
+  margin-left:auto;
+  margin-right:auto;
+  border: 2px solid darkgray;
+  width: 150px;
+  height: 150px;
+}
+
+
 #progress-bar {
-  width: 600px;
+  width: 560px;
   height: 30px;
   background-color: white;
   margin-left:auto;
@@ -40,28 +112,10 @@ section {
   margin:0;
 }
 
-#form-wrapper {
-  width: 30%;
-  min-height: 400px;
-  background-color: lightblue;
-  float: left;
-}
-
-label {
-  width: 100%;
-  display:block;
-}
-
-#list-div {
-  width: 70%;
-  min-height: 600px;
-  background-color: pink;
-  float: right;
-}
 
 .svg-drawing {
   border:1px solid black;
-  margin: 20px 20px 5px 20px;
+  margin: 0 auto 5px;
   background-color: white;
 }
 
@@ -73,8 +127,80 @@ label {
   font-weight: bold;
 }
 
-#test {
+
+#form-wrapper {
+  width: 200px;
+  min-height: 70vh;
+  float: left;
+}
+
+#form {
+  width: 200px;
+  padding: 5px;
+}
+
+label {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+  display:block;
+  border-top:1px solid darkgray;
+}
+
+input[type=range]{
+  width: 180px;
+  margin-bottom: 5px;
+}
+
+input[type=number]{
+  width: 60px;
+  height: 25px;
+  font-size: 12pt;
+  padding-left:4px;
+  margin-bottom: 15px;
+}
+
+input[type=checkbox]{
+  margin:0;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+input[type=button]{
+  font-size: 12pt;
+  color:white;
+  margin-top: 20px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+  width: 180px;
+  height: 30px;
+  display:block;
+  background-color: forestgreen;
+}
+
+input[type=submit]{
+  font-size: 12pt;
+  color:white;
+  background-color: tomato;
+  margin-top: 20px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+  width: 180px;
+  height: 30px;
+  display:block;
+}
+
+#clear-gallery {
+  font-size: 12pt;
+  color:white;
+  background-color: tomato;
+  margin-top: 0;
+  margin-left:auto;
+  margin-right:auto;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
   width: 150px;
-  height: 150px;
-  border: 1px solid red;
+  height: 30px;
+  display:block;
 }

@@ -66,11 +66,32 @@ Settings.prototype.saveCurve = function (e) {
 
     e.preventDefault();
 
-    const copySVG = this.renderer.makeCopy(150);
+    const galleryDiv = document.createElement('div');
+    galleryDiv.classList.add('gallery-div');
+    this.gallery.appendChild(galleryDiv);
+
+    const scale = 0.25;
+
+    let galleryOptions = {
+        animate: false,
+        radius1: parseInt(this.options.radius1) * scale,
+        radius2: parseInt(this.options.radius2) * scale,
+        radius3: parseInt(this.options.radius3) * scale,
+        rotations: parseInt(this.options.rotations)
+    };
 
 
-    this.gallery.appendChild(copySVG);
+    const galleryRenderer = new Renderer(galleryDiv, 150, 150, 150, true);
+    galleryRenderer.init();
 
+    galleryRenderer.draw(galleryOptions, this.saveToGallery.bind(galleryRenderer, galleryDiv));
+
+
+};
+
+Settings.prototype.saveToGallery = function(div){
+
+    console.log("Gallery renderer complete");
 
 };
 

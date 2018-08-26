@@ -1,4 +1,4 @@
-const Renderer = function (elem, width, height, scaleWidth) {
+const Renderer = function (elem, width, height, scaleWidth, gallery) {
 
     this.parentElement = elem;
     this.drawingWidth = width;
@@ -15,6 +15,8 @@ const Renderer = function (elem, width, height, scaleWidth) {
     this.isDrawing = false;
     this.points = [];
     this.curves = [];
+
+    this.isGallery = gallery;
 
 
 };
@@ -36,16 +38,20 @@ Renderer.prototype.svgElement = function (options) {
 Renderer.prototype.init = function () {
 
     this.createDrawing();
-    this.createProgress();
+    if (!this.isGallery){
+        this.createProgress();
+    }
     this.isDrawing = false;
 
 };
 
 Renderer.prototype.updateProgress = function (percent) {
 
-    this.progressPercent = Math.floor(percent);
-    this.progress.setAttribute('style', `width:${this.progressPercent}%`);
-    this.progress.innerHTML = `<p>${this.progressPercent}%</p>`;
+    if (this.progress != null){
+        this.progressPercent = Math.floor(percent);
+        this.progress.setAttribute('style', `width:${this.progressPercent}%`);
+        this.progress.innerHTML = `<p>${this.progressPercent}%</p>`;
+    }
 
 };
 
@@ -130,7 +136,6 @@ Renderer.prototype.drawFrame = function(callback){
 
     let d = '';
     let lastCurve = '';
-
 
 
     if (this.options.animate){
