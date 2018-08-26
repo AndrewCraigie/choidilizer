@@ -11,11 +11,45 @@ section {
   border: 1px solid #444;
 }
 
-#form-div {
+#drawing {
+  width: 650px;
+  height: 670px;
+  background-color: lightgray;
+  float: right;
+}
+
+.svg-wrapper {
+  position: relative;
+  margin:0;
+}
+
+#progress-bar {
+  width: 600px;
+  height: 30px;
+  background-color: white;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 0;
+
+}
+
+#progress {
+  width:0;
+  height: 30px;
+  background-color: forestgreen;
+  margin:0;
+}
+
+#form-wrapper {
   width: 30%;
   min-height: 400px;
   background-color: lightblue;
   float: left;
+}
+
+label {
+  width: 100%;
+  display:block;
 }
 
 #list-div {
@@ -23,4 +57,24 @@ section {
   min-height: 600px;
   background-color: pink;
   float: right;
+}
+
+.svg-drawing {
+  border:1px solid black;
+  margin: 20px 20px 5px 20px;
+  background-color: white;
+}
+
+#progress p {
+  color: white;
+  line-height: 30px;
+  padding:0;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+#test {
+  width: 150px;
+  height: 150px;
+  border: 1px solid red;
 }
